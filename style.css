@@ -1,0 +1,169 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oregano&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
+
+:root {
+    --cor-0: #514768;
+    --cor-1: #2a4043;
+    --cor-2: #fff;
+    --cor-3: #95a0a1;
+    --cor-4: #2f2942;
+    --cor-5: #00ff87;
+    --cor-6: #333;
+    --cor-7: #201b2c;
+
+
+    --fonte1: Verdana, Geneva, Tahoma, sans-serif;
+    --fonte2: 'Passion One', cursive;
+    --fonte3: 'Sriracha', cursive;
+}
+
+
+@font-face {
+    font-family: minhaFonte;
+    src: url(font/barcadbold.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: var(--cor-7);
+
+}
+
+h1 {
+    text-align: center;
+    font-family: "Bebas Neue", serif;
+    font-weight: bolder;
+    font-size: 30px;
+    color: var(--cor-5);
+    margin-top: 20px;
+    text-shadow: 1px 1px 2px black ;
+}
+
+img {
+    height: 120px;
+}
+
+.registro1  #user-form{
+    position: relative;
+    top: 190px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    margin: 20px 0;
+    padding: 20px; /* Adiciona um pouco de espaçamento interno */
+    box-sizing: border-box; /* Inclui o padding na largura total */
+}
+
+form {
+    background-color: var(--cor-4);
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    gap: 10px;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.397);
+}
+
+label {
+    font-family: "Bebas Neue", serif;
+    font-weight: normal;
+    color: var(--cor-3);
+    text-shadow: 1px 1px 2px black;
+    
+}
+
+form input {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor-0);
+    border-radius: 8px;
+    border: none;
+    
+}
+
+input,
+select,
+button {
+    padding: 5px;
+    font-size: 16px;
+}
+
+select {
+    background-color: #514768;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+select option {
+    background-color: #514768;
+    font-family: "Bebas Neue", serif;
+    font-weight: 100;
+    color: #fff;
+}
+
+.btn-1 {
+    margin-top: 25px;
+    background-color: #00ff87;
+    border: none;
+    font-family: "Bebas Neue", serif;
+    font-weight: normal;
+    font-size: 20px;
+    color: var(--cor-0);
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid #fff;
+}
+
+.btn-1:hover {
+    background-color: #fff;
+    transition: 0.5s;
+    border: 1px solid #00ff87;
+}
+
+#user-data {
+    position: relative;
+    gap: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 50px auto 50px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #95a0a1;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #201b2c;
+}
+
+.user-entry {
+    display: grid;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.end-shift {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-top: 12px;
+    padding: 8px 10px;
+    font-size: 12px;
+    color: #2f2942;
+    background-color: #00ff87;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    border: 1px solid #fff;
+}
+
+
+
