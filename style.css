@@ -29,71 +29,73 @@
     box-sizing: border-box;
 }
 
-
 body {
     background-color: var(--cor-7);
 
 }
 
 h1 {
+    position: relative;
+    bottom: 10px;
+    background-color: #95a0a1;
     text-align: center;
     font-family: "Bebas Neue", serif;
-    font-weight: bolder;
-    font-size: 30px;
-    color: var(--cor-5);
-    margin-top: 20px;
-    text-shadow: 1px 1px 2px black ;
+    font-weight: lighter;
+    font-size: 20px;
+    color: var(--cor-2);
+    text-shadow: 0.5px 0.5px 1.5px black;
+    letter-spacing: 1px;
+    margin: 15px;
+    border-radius: 3px;
 }
 
-img {
-    height: 120px;
+#borda {
+    border: 1.5px solid #95a0a1;
+    padding: 13px 20px 30px 13px;
+    border-radius: 3px;
 }
 
-.registro1  #user-form{
-    position: relative;
-    top: 190px;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.registro1 #user-form {
+    position: relative; /* Altere para absolute para centralizar em relação ao body */
+    top: 250px; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajuste preciso */
     width: 300px;
-    margin: 20px 0;
-    padding: 20px; /* Adiciona um pouco de espaçamento interno */
-    box-sizing: border-box; /* Inclui o padding na largura total */
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens filhos */
 }
 
 form {
     background-color: var(--cor-4);
     display: flex;
     flex-direction: column;
-    max-width: 400px;
     gap: 10px;
-    padding: 50px;
+    padding: 30px;
     border-radius: 15px;
     box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.397);
+    width: 100%;
+    align-items: center; /* Garante que os elementos dentro do form fiquem centralizados */
 }
 
 label {
     font-family: "Bebas Neue", serif;
     font-weight: normal;
-    color: var(--cor-3);
+    font-size: 16px;
+    color: var(--cor-2);
     text-shadow: 1px 1px 2px black;
-    
 }
 
-form input {
-    display: grid;
-    justify-content: center;
-    align-items: center;
+form input, form select {
     background-color: var(--cor-0);
     border-radius: 8px;
     border: none;
     color: #fff;
-}
-
-input,
-select,
-button {
-    padding: 5px;
-    font-size: 16px;
+    padding: 7px;
+    margin-bottom: 12px;
+    width: 100%; /* Faz com que os inputs e selects se ajustem à largura do form */
 }
 
 select {
@@ -105,21 +107,22 @@ select {
 select option {
     background-color: #514768;
     font-family: "Bebas Neue", serif;
-    font-weight: 100;
+    font-weight: 500;
     color: #fff;
 }
 
 .btn-1 {
+    padding: 7px;
     margin-top: 25px;
     background-color: #00ff87;
-    border: none;
     font-family: "Bebas Neue", serif;
     font-weight: normal;
-    font-size: 20px;
+    font-size: 16px;
     color: var(--cor-0);
     border-radius: 8px;
     cursor: pointer;
     border: 1px solid #fff;
+    width: 100%; /* Faz com que o botão ocupe a largura total disponível */
 }
 
 .btn-1:hover {
@@ -136,15 +139,15 @@ select option {
     justify-content: center;
     align-items: center;
     padding: 15px;
-    /*background-color: #95a0a1;*/
     font-family: Arial, Helvetica, sans-serif;
     color: #201b2c;
 }
 
 .user-entry {
+    margin-top: 50px;
     display: grid;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 2px solid #fff;
     border-radius: 5px;
     background-color: #95a0a1;
 }
@@ -158,7 +161,6 @@ select option {
     color: #2f2942;
     background-color: #00ff87;
     border: none;
-    border-radius: 3px;
     cursor: pointer;
     border: 1px solid #fff;
 }

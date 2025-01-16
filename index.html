@@ -15,26 +15,27 @@
 </head>
 
 <body>
-    <h1>Registro de Promotores e Manutenção</h1>
-
     <section class="registro1">
         <form id="user-form">
-            <label for="company">Nome da Empresa:</label>
-            <input type="text" id="company" required>
-            <label for="username">Nome do Usuário:</label>
-            <input type="text" id="username" required>
-            <label for="document">Documento:</label>
-            <input type="text" id="document" required>
-            <label for="user-type">Tipo de Usuário:</label>
-            <select id="user-type" required>
-                <option value="">Selecione</option>
-                <option value="Fixo">Fixo</option>
-                <option value="Rotativo">Rotativo</option>
-                <option value="Manutenção">Manutenção</option>
-            </select>
-            <button type="submit" class="btn-1">Registrar</button>
-        </form>
+            <div id="borda">
+                <h1>Registro de Promotores</h1>
+                <label for="company">Nome da Empresa:</label>
+                <input type="text" id="company" required>
+                <label for="username">Nome do Usuário:</label>
+                <input type="text" id="username" required>
+                <label for="document">Documento:</label>
+                <input type="text" id="document" required>
+                <label for="user-type">Tipo de Usuário:</label>
+                <select id="user-type" required>
+                    <option value="" id="exclusivo">Selecione</option>
+                    <option value="Fixo">Fixo</option>
+                    <option value="Rotativo">Rotativo</option>
+                    <option value="Manutenção">Manutenção</option>
+                </select>
 
+                <button type="submit" class="btn-1">Registrar</button>
+            </div>
+        </form>
     </section>
 
     <div id="user-data"></div>

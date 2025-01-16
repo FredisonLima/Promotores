@@ -16,7 +16,8 @@ form.addEventListener('submit', (e) => {
         username: document.getElementById('username').value,
         document: document.getElementById('document').value,
         userType: document.getElementById('user-type').value,
-        entryTime: new Date().toLocaleString(),
+        entryTime: formatTime(new Date()),
+        entryDate: formatDate(new Date()),
         exitTime: null
     };
 
@@ -33,6 +34,8 @@ function displayUserData(userData, index) {
     const userEntry = document.createElement('div');
     userEntry.classList.add('user-entry');
     userEntry.innerHTML = `
+        <p style="font-weight: bold; color: #201b2c; font-size: 17px; text-align: center;"><strong>
+        </strong> ${userData.entryDate}</p>
         <p><strong>Empresa:</strong> ${userData.company}</p>
         <p><strong>Usuário:</strong> ${userData.username}</p>
         <p><strong>Documento:</strong> ${userData.document}</p>
@@ -58,11 +61,12 @@ function displayUserData(userData, index) {
     buttonDelete.textContent = 'Excluir';
     buttonDelete.style.backgroundColor = '#201b2c';
     buttonDelete.style.color = '#FFFFFF';
-    buttonDelete.style.fontSize = '12px';
+    buttonDelete.style.fontSize = '13px';
     buttonDelete.style.padding = '6px 8px';
     buttonDelete.style.cursor = 'pointer';
-    buttonDelete.style.position = 'relative';     // Define o posicionamento absoluto
-    buttonDelete.style.top = '0.1px';              // Distância do topo
+    buttonDelete.style.position = 'relative';
+    buttonDelete.style.top = '0.1px';
+    buttonDelete.style.border = '1px solid #00ff87';
     buttonDelete.onclick = () => deleteEntry(index);
     userEntry.appendChild(buttonDelete);
 
@@ -72,7 +76,7 @@ function displayUserData(userData, index) {
 function endShift(index) {
     const storedData = JSON.parse(localStorage.getItem('user-data')) || [];
     if (storedData[index]) {
-        storedData[index].exitTime = new Date().toLocaleString();
+        storedData[index].exitTime = formatTime(new Date());
         localStorage.setItem('user-data', JSON.stringify(storedData));
 
         // Atualizar a exibição para este usuário
@@ -83,28 +87,31 @@ function endShift(index) {
 
         const userEntry = userDataDiv.children[index];
         if (userEntry) {
-            userEntry.querySelector('p:nth-child(6)').textContent = `Horário de Saída: ${storedData[index].exitTime}`;
+            userEntry.querySelector('p:nth-child(7)').textContent = `Horário de Saída: ${storedData[index].exitTime}`;
+            userEntry.style.fontWeight = 'bolder';
         }
     }
 }
 
 function deleteEntry(index) {
-    // Carregar os dados armazenados no localStorage
     const storedData = JSON.parse(localStorage.getItem('user-data')) || [];
-
-    // Remover o item do array
     storedData.splice(index, 1);
-
-    // Atualizar o localStorage
     localStorage.setItem('user-data', JSON.stringify(storedData));
 
-    // Remover a entrada da tela
     userDataDiv.children[index].remove();
 
-    // Reordenar os dados e os índices na tela
-    // Para garantir que a ordem dos itens na página corresponda ao localStorage
     const updatedData = JSON.parse(localStorage.getItem('user-data')) || [];
-    userDataDiv.innerHTML = ''; // Limpar a tela
+    userDataDiv.innerHTML = '';
     updatedData.forEach((data, i) => displayUserData(data, i));
 }
+
+function formatTime(date) {
+    return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+}
+
+function formatDate(date) {
+    return date.toLocaleDateString([], { day: '2-digit', month: '2-digit', year: 'numeric' });
+    
+}
+
 
